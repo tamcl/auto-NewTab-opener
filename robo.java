@@ -22,17 +22,27 @@ public class robo
 
         // Create an instance of Robot class
         Robot robot = new Robot();
+	int tab = 10;
 
         // Press keys using robot. A gap of
         // of 500 mili seconds is added after
         // every key press
-        for(int i=0;i<100;i++) {
+        while(true) {
             robot.keyPress(KeyEvent.VK_CONTROL);
-            robot.keyPress(KeyEvent.VK_T);
-            robot.keyRelease(KeyEvent.VK_T);
-            Thread.sleep(2000);
-            robot.keyPress(KeyEvent.VK_W);
-            robot.keyRelease(KeyEvent.VK_W);
+            
+		for(int i=0;i<tab;i++){
+		robot.keyPress(KeyEvent.VK_N);
+            	robot.keyRelease(KeyEvent.VK_N);
+Thread.sleep(500);
+		}
+		robot.keyRelease(KeyEvent.VK_CONTROL);
+            Thread.sleep(5000);
+	robot.keyPress(KeyEvent.VK_CONTROL);
+            for(int i=0;i<tab;i++){
+		robot.keyPress(KeyEvent.VK_W);
+            	robot.keyRelease(KeyEvent.VK_W);
+Thread.sleep(500);
+		}
             robot.keyRelease(KeyEvent.VK_CONTROL);
         }
 
